@@ -1,0 +1,155 @@
+CREATE TABLE member (
+    m_num     NUMBER(5) NOT NULL,
+    m_type    NUMBER(1) NOT NULL,
+    m_id      VARCHAR2(20) NOT NULL,
+    m_pw      VARCHAR2(20) NOT NULL,
+    m_name    VARCHAR2(20) NOT NULL,
+    m_email   VARCHAR2(100) NOT NULL,
+    m_birth   DATE,
+    CONSTRAINT m_pk PRIMARY KEY ( m_num ),
+    CONSTRAINT unique_id UNIQUE ( m_id ),
+    CONSTRAINT check_type CHECK ( m_type IN ('0','1') )
+);
+
+CREATE TABLE item (
+    p_num         NUMBER(5) NOT NULL,
+    p_name        VARCHAR2(50) NOT NULL,
+    p_public      DATE,
+    p_writer      VARCHAR2(20) NOT NULL,
+    p_genre       VARCHAR2(20) NOT NULL,
+    p_publisher   VARCHAR2(20) NOT NULL,
+    p_summary     VARCHAR2(1000) NOT NULL,
+    p_file_name   VARCHAR2(20) NOT NULL,
+    p_price       NUMBER(10) NOT NULL,
+    CONSTRAINT i_pk PRIMARY KEY ( p_num ),
+    CONSTRAINT price_check CHECK ( p_price > 0 ),
+    CONSTRAINT unique_file UNIQUE ( p_file_name )
+);
+
+CREATE TABLE purchased_item (
+    o_num            NUMBER(5),
+    m_num            NUMBER,
+    p_num            NUMBER(10),
+    ispayed          VARCHAR2(1),
+    purchased_date   DATE,
+    p_name        VARCHAR2(50),
+    CONSTRAINT order_pk PRIMARY KEY ( o_num ),
+    CONSTRAINT user_fk FOREIGN KEY ( m_num ) REFERENCES member ( m_num ) on delete cascade,
+    CONSTRAINT purchased_fk FOREIGN KEY ( p_num ) REFERENCES item ( p_num ) on delete cascade,
+    CONSTRAINT check_ispayed CHECK ( ispayed IN ('0','1') )
+);
+
+CREATE TABLE account (
+    m_num         NUMBER,
+    bank_name     VARCHAR2(10) NOT NULL,
+    account_num   VARCHAR2(20) NOT NULL,
+    balance       NUMBER(20),
+    CONSTRAINT pk PRIMARY KEY ( m_num ),
+    CONSTRAINT fk FOREIGN KEY ( m_num ) REFERENCES member ( m_num ) on delete cascade
+);
+
+CREATE TABLE review (
+    r_num      NUMBER(10),
+    m_num     NUMBER,
+    p_num      NUMBER,
+    score      NUMBER(1) NOT NULL,
+    contents   VARCHAR2(100),
+    CONSTRAINT r_pk PRIMARY KEY ( r_num ),
+    CONSTRAINT m_fk FOREIGN KEY ( m_num ) REFERENCES member ( m_num ) on delete cascade,
+    CONSTRAINT p_fk FOREIGN KEY ( p_num ) REFERENCES item ( p_num ) on delete cascade
+);
+
+
+CREATE SEQUENCE seq_member 
+START WITH 1 
+INCREMENT BY 1 
+MAXVALUE 9999 
+NOCACHE;
+
+CREATE SEQUENCE seq_item 
+START WITH 1 
+INCREMENT BY 1 
+MAXVALUE 9999 
+NOCACHE;
+
+CREATE SEQUENCE seq_order 
+START WITH 1 
+INCREMENT BY 1 
+MAXVALUE 9999 
+NOCACHE;
+
+CREATE SEQUENCE seq_review 
+START WITH 1 
+INCREMENT BY 1 
+MAXVALUE 9999 
+NOCACHE;
+
+insert into member values(seq_member.nextval, '1', 'admin', 'admin', 'admin', 'admin@kitri.co.kr', sysdate);
+
+insert into member values(seq_member.nextval, '0', 'Son', 'qwer1234', 'Sonheungmin', 'Son@tottenham.uk', sysdate);
+insert into member values(seq_member.nextval, '0', 'Moon', 'isthisnation', 'Moonjaein', 'President@korea.co.kr', sysdate);
+insert into member values(seq_member.nextval, '0', 'Mina', 'penguin', 'MyoiMina', 'Mina@jypentertainment.co.kr', sysdate);
+insert into member values(seq_member.nextval, '0', 'leeshin', 'ikk', 'leeshin', 'leeshin@leagueoflegends.co.kr', sysdate);
+insert into member values(seq_member.nextval, '0', 'Zonber', 'milbae', 'Prison', 'Zonber@battleground.co.kr', sysdate);
+insert into member values(seq_member.nextval, '0', 'Ozil', '1q2w3e4r', 'Ozil', 'Ozil@arsenal.uk', sysdate);
+insert into member values(seq_member.nextval, '0', 'Inssa', 'real', 'Ssipinssa', 'Inssa@club.co.kr', sysdate);
+insert into member values(seq_member.nextval, '0', 'Linkinpark', 'chester', 'Bennington', 'Linkinpark@forever.com', sysdate);
+insert into member values(seq_member.nextval, '0', 'Iwobi', 'zaka', 'welback', 'plzout@arsenal.uk', sysdate);
+insert into member values(seq_member.nextval, '0', 'Sana', 'nosananolife', 'Minatozaki', 'Sana@jypentertainment.co.kr', sysdate);
+
+insert into account values(1, 'WOORI', '111-111111-111', 1000000);
+insert into account values(2, 'SHINHAN', '222-222222-222', 5000);
+insert into account values(3, 'NONGHYEOP', '333-333333-333', 7777);
+insert into account values(4, 'GIUP', '444-444444-444', 12345);
+insert into account values(5, 'CITY', '555-555555-555', 6789);
+insert into account values(6, 'KB', '666-666666-666', 1990);
+insert into account values(7, 'WOORI', '777-777777-777', 831);
+insert into account values(8, 'SHINHAN', '888-888888-888', 9876);
+insert into account values(9, 'JEOCHUK', '999-999999-999', 543210);
+insert into account values(10, 'HSBC', '000-000000-000', 35000);
+
+insert into item values(seq_item.nextval, 'Onepiece', to_date('2001', 'YYYY'), 'Sipda', 'Comic', 'DaewonCI','내동료가 되라..', '1_Onepiece.txt', 1400);
+insert into item values(seq_item.nextval, 'Justice', to_date('2014', 'YYYY'),' SANDEL', 'Humanities', 'Wiseberry','정의론..', '2_Justice.txt', 1350);
+insert into item values(seq_item.nextval, 'Marshmallow', to_date('2012', 'YYYY'), 'Hoakim', 'Self-improvement', '21Century','마시멜로..', '3_Marshmallow.txt', 1200);
+insert into item values(seq_item.nextval, 'Sonzastrategy', to_date('2016', 'YYYY'), 'Sonmu', 'Philosophy', 'Humanist','싸우지않고..', '4_Sonzastrategy.txt', 1620);
+insert into item values(seq_item.nextval, 'Estranger', to_date('2018', 'YYYY'), 'Camus', 'Worldnovel', 'Mineumsa','이방인..', '5_Estranger.txt', 1240);
+insert into item values(seq_item.nextval, 'Bigpicture', to_date('2000', 'YYYY'), 'Duglas', 'Amenovel', 'Goodworld','미국 뉴욕..', '6_Bigpicture.txt', 1100);
+insert into item values(seq_item.nextval, '1Q84', to_date('2001', 'YYYY'), 'Haruki', 'Japnovel', 'Literature','덴고는..', '7_1Q84.txt', 1330);
+insert into item values(seq_item.nextval, 'Mugunghwa', to_date('2010', 'YYYY'), 'JinmyeongKim', 'Detective', 'Haenaem','핵을 밝히기..', '8_Mugunghwa.txt', 2480);
+insert into item values(seq_item.nextval, '82kgboar', to_date('2016', 'YYYY'), 'Boar', 'Fantasy', 'Anrigalme','한국멧돼..', '9_82kgboar.txt', 1818);
+insert into item values(seq_item.nextval, 'Twice', to_date('2015', 'YYYY'), 'JYP', 'Epic tale', 'JYP','친구를만나느라..', '10_Twice.txt', 9999);
+
+commit;
+
+------------------------------------
+일괄 삭제시 사용하세요.
+
+drop table review;
+drop table account;
+drop table purchased_item;
+drop table item;
+drop table member;
+drop sequence seq_member;
+drop sequence seq_item;
+drop sequence seq_order;
+drop sequence seq_review;
+
+------------------------------------
+
+**관리자**
+    m_num	1 (seq_member사용)
+    m_type	1
+    m_id		admin
+    m_pw		admin
+    m_name	admin
+    m_email	admin@kitri.co.kr
+    m_birth   	sysdate
+
+**일반 사용자**
+    m_num	seq_member사용
+    m_type	0
+    m_id	-
+    m_pw	-
+    m_name	-
+    m_email	-@kitri.co.kr
+    m_birth   	sysdate
