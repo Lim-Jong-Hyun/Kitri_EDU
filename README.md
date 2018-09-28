@@ -1,2 +1,9 @@
 # Kitri_EDU
-This is for Kitri Education for Web Programming
+Oracle Database System
+JAVA Programming (JDBC, NETWORK, MVC ..) 
+HTML, JAVASCRIPT, JQUERY, CSS
+SERVLET, JSP
+AJAX
+ANDROID
+SPRING
+
