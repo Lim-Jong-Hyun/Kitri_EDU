@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>영상등록</title>
+<script type="text/javascript"
+	src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="data.js"></script>
+<link rel="stylesheet" href="main.css">
+
+<script type="text/javascript">
+
+	$(document).ready(function() {
+		
+		var url = location.href;
+		var i =url.split("av=")[1];
+		$('#d').html(unescape(i));
+	});
+
+	
+</script>
+</head>
+<body>
+<div id='d'></div>
+</body>
+</html>

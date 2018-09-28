@@ -1,0 +1,45 @@
+@charset "EUC-KR";
+
+input[type=button] {
+	color: #2E9AFE;
+	background-color: #FFF;
+	font-weight: bold;
+	width: 70px;
+	padding: 0px;
+}
+
+input[type=radio]{
+	
+	margin:10px;
+}
+
+#t{
+	background-color: #E0ECF8;
+	border-collapse: collapse;
+	width: 580px;
+}
+
+#tt{
+	background-color: #E0ECF8;
+	border-collapse: collapse;
+	width: 580px;
+}
+
+#c{
+	background-color: #E0ECF8;
+	border-collapse: collapse;
+	width: 500px;
+	height: 250px;
+}
+
+th {
+	border-bottom: 1px solid #444444;
+}
+#enroll{
+	width: 200px;
+	color: black;
+}
+
+.a{
+	width:550px;
+}

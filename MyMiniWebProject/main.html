@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>동영상..동영상을 보자</title>
+<script type="text/javascript"
+	src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+<link rel="stylesheet" href="main.css">
+<script type="text/javascript" src="data.js"></script>
+<script type="text/javascript">
+	var str = '<table id="tt">'
+	str += '<tr> <td colspan=7>분류</td> </tr>';
+	str += '<tr><td><input name="bb" type="radio" id="game2" value="game">게임</td>';
+	str += '<td><input name="bb" type="radio" id="humor2" value="humor">유머</td>';
+	str += '<td><input name="bb" type="radio" id="music2" value="music">음악</td>';
+	str += '<td><input name="bb" type="radio" id="move2" value="move">감동</td>';
+	str += '<td><input name="bb" type="radio" id="animal2" value="animal">동물</td>';
+	str += '<td><input name="bb" type="radio" id="sports2" value="sports">스포츠</td>';
+	str += '<td><input name="bb" type="radio" id="etc2" value="etc">기타</td></tr>';
+	str += '<tr><td colspan=7>YOUTUBE URL</td></tr>';
+	str += '<tr> <td colspan=7><input type="text" class="a" placeholder="YOUTUBE URL입력" id="ylink"></td></tr>';
+	str += '<tr><td colspan=7>제목</td></tr>';
+	str += '<tr><td colspan=7><input type="text" class="a" placeholder="제목입력" id="title"></td></tr>';
+	str += '<tr><td colspan=7>요약</td></tr>';
+	str += '<tr><td colspan=7><input type="text" class="a" placeholder="요약입력" id="contents"></td></tr>';
+	str += '<tr><td colspan=7>암호</td></tr>';
+	str += '<tr><td colspan=7><input type="password" class="a" placeholder="암호입력" id="pwd"></td></tr>';
+	str += '<tr><td ><input type="button" class="b" value="등록" id="enroll2"></td>';
+	str += '<td><input type="button" class="b" value="취소" id="cancel"></td></tr></table>';
+
+	var str2 = '<input type="button" value="영상(링크) 등록하기" id="enroll"><br>';
+	var cnt = 0;
+	var arr = new Array();
+	var win;
+	$(document).ready(function() {
+		$('#enroll').click(function() {
+			$('#d').append(str);
+			$('#cancel').on("click",function() {
+				$('#tt').remove();
+			});
+
+			$('#enroll2').on("click",function() {
+				var kind = $("input:radio[name='bb']:checked").val();
+				var ylink = $('#ylink').val();
+				var title = $('#title').val();
+				var contents = $('#contents').val();
+				var pwd = $('#pwd').val();
+				
+				if (ylink == ""|| kind==null || ylink=="" || title=="" || contents==""||pwd=="") {
+					$('#tt').remove();
+					alert("빈칸이 있습니다!");
+					
+				} else {
+					try{
+					var real = ylink.split("?")[1].split("&")[0].split("=")[1];
+					}catch(err){
+						alert("정확한 유튜브 링크를 입력하세요");
+						return;
+					}
+					arr[cnt] = new Data(kind,real,title,contents,pwd);
+					var url = "http://img.youtube.com/vi/"+ real+ "/1.jpg";
+					var url2 = "<img src='"+url+"'style='cursor:pointer' id ='a_"+cnt+"'>";
+					var str3 = "<tbody id =r_"+cnt+"><tr><td rowspan='3'>"+ url2+ "</td><td colspan='7' style='font-weight:bold;color:blue'> 제목 : "+ arr[cnt].title+ "</td></tr>";
+					str3 += "<tr ><td colspan='7'>"+ arr[cnt].contents+ "</td></tr>";
+					str3 += "<tr ><td colspan='3'> 생성시간:"+ arr[cnt].w_date+ "</td>";
+					str3 += "<td ><input type=password id='b_"+cnt+"'placeholder='암호입력' style='width:70px'></td>";
+					str3 += "<td ><input type=button id='c_"+cnt+"' value ='삭제하기'></td>";
+					str3 += "<td ><input type=button id='d_"+cnt+"' value ='댓글보기'></td>";
+					str3 += "<td style='text-align: center; font-weight:bold; color:red;'>  "+arr[cnt].kind+"</td></tr></tbody>";
+				
+					
+					$('#t').append(str3);
+					
+					$('#a_'+ cnt).on("click",function() {
+						var av = '<iframe width="640" height="320" src="https://www.youtube.com/embed/'+real+'" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>';
+						win = window.open("sub.html?av="+ av,"새창","width=670, height=350,top=200,left=200");
+					});
+					
+					$('#c_'+ cnt).on("click",function() {
+						var num = parseInt($(this).attr("id").split("_")[1]); //시발 여기가 넘버가져오는데다!
+						//alert($('#b_'+num).val());
+						if($('#b_'+num).val()==arr[num].pwd){
+							$('#r_'+num).remove();
+						}
+						else{
+							alert("비번이 일치하지 않음");
+						}
+					});
+					
+					$('#d_'+ cnt).on("click",function() {
+						var num = parseInt($(this).attr("id").split("_")[1]); //시발 여기가 넘버가져오는데다!
+						
+					});
+					
+					cnt++;
+					$('#tt').remove();
+					alert("등록 성공!! ^_^");
+
+				
+				}
+
+			});
+			
+
+			});
+		
+		
+			$('#game').click(function(){
+				for(i=0; i<cnt;i++){
+				$('#r_'+i).show();				
+				}
+				for(i=0; i<cnt;i++){
+				if(arr[i].kind != "game")
+					$('#r_'+i).hide();				
+				}
+			});
+			$('#humor').click(function(){
+				for(i=0; i<cnt;i++){
+					$('#r_'+i).show();				
+				}
+				for(i=0; i<cnt;i++){
+				if(arr[i].kind != "humor")
+					$('#r_'+i).hide();				
+				}
+			});
+			$('#music').click(function(){
+				for(i=0; i<cnt;i++){
+					$('#r_'+i).show();				
+				}
+				for(i=0; i<cnt;i++){
+				if(arr[i].kind != "music")
+					$('#r_'+i).hide();				
+				}
+			});
+			$('#move').click(function(){
+				for(i=0; i<cnt;i++){
+					$('#r_'+i).show();				
+				}
+				for(i=0; i<cnt;i++){
+				if(arr[i].kind != "move")
+					$('#r_'+i).hide();				
+				}
+			});
+			$('#animal').click(function(){
+				for(i=0; i<cnt;i++){
+					$('#r_'+i).show();				
+				}
+				for(i=0; i<cnt;i++){
+				if(arr[i].kind != "animal")
+					$('#r_'+i).hide();				
+				}
+			});
+			$('#sports').click(function(){
+				for(i=0; i<cnt;i++){
+					$('#r_'+i).show();				
+				}
+				for(i=0; i<cnt;i++){
+				if(arr[i].kind != "sports")
+					$('#r_'+i).hide();				
+				}
+			});
+			$('#etc').click(function(){
+				for(i=0; i<cnt;i++){
+					$('#r_'+i).show();				
+				}
+				for(i=0; i<cnt;i++){
+				if(arr[i].kind != "etc")
+					$('#r_'+i).hide();				
+				}
+			});
+			
+			$('#all').click(function(){
+				for(i=0; i<cnt;i++){
+					$('#r_'+i).show();				
+				}
+			});
+
+			});
+</script>
+
+</head>
+
+
+<body>
+	<h2>동영상.. 동영상을 보자</h2>
+	<div id="d">
+		<input type="button" value="영상(링크) 등록하기" id="enroll"><br>
+	</div>
+	<table id="t">
+		<tr>
+			<th><input type="button" value="전체" id="all"></th>
+			<th><input type="button" value="게임" id="game"></th>
+			<th><input type="button" value="유머" id="humor"></th>
+			<th><input type="button" value="음악" id="music"></th>
+			<th><input type="button" value="감동" id="move"></th>
+			<th><input type="button" value="동물" id="animal"></th>
+			<th><input type="button" value="스포츠" id="sports"></th>
+			<th><input type="button" value="기타" id="etc"></th>
+		</tr>
+	</table>
+
+</body>
+</html>
