@@ -4,21 +4,21 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
-<title>������ ���� ǥ���ϱ�</title>
+<title>간단한 지도 표시하기</title>
 <!-- <script type="text/javascript" src="../../docs/js/examples-base.js"></script> -->
 <!-- <script type="text/javascript" src="../../docs/js/highlight.min.js"></script> -->
-<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=ri4vEtl3RpdjfQ36bd_C&amp;submodules=panorama"></script>
-<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=ri4vEtl3RpdjfQ36bd_C&submodules=geocoder"></script>
+<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=클라이언트 ID&amp;submodules=panorama"></script>
+<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=클라이언트 ID&submodules=geocoder"></script>
 <!-- <script src='http://dev.openapi.map.naver.com/openapi/maps3.max.js?submodules=drawing'></script> -->
-<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=ri4vEtl3RpdjfQ36bd_C&amp;submodules=drawing"></script>
+<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=클라이언트 ID&amp;submodules=drawing"></script>
 <script type="text/javascript" src="//code.jquery.com/jquery-3.3.1.min.js"></script>
 <link rel="stylesheet" href="${pageContext.request.contextPath }/css/map.css">
 </head>
 <div id="wrap" class="section">
 	<div id="map" style="width: 100%; height: 600px;">
 		<div class="buttons">
-			<input id="startM" type="button" value="�������" class="control-btn" /> 
-			<input id="endM" type="button" value="��������" class="control-btn" />
+			<input id="startM" type="button" value="출발지로" class="control-btn" /> 
+			<input id="endM" type="button" value="도착지로" class="control-btn" />
 		</div>
 	</div>
 	<code id="snippet" class="snippet"></code>
