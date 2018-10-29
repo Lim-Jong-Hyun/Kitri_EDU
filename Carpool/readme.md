@@ -20,7 +20,7 @@
 ![4](https://user-images.githubusercontent.com/38081451/47631302-f824da00-db88-11e8-82a5-ce152e38aa6f.PNG)
 ![5](https://user-images.githubusercontent.com/38081451/47631304-f824da00-db88-11e8-8194-8afcf0221076.PNG)
 
-4. Driver로 게시판에 글 등록 ( Passenger 유사하므로 생략 )
+4. Driver로 게시판에 글 등록 ( 네이버 지도 API v3사용 )
 ![6](https://user-images.githubusercontent.com/38081451/47631305-f8bd7080-db88-11e8-8b3d-2ecc0b74ac61.PNG)
 ![7](https://user-images.githubusercontent.com/38081451/47631300-f824da00-db88-11e8-8808-8ed843e3fd46.jpg)
 ![8](https://user-images.githubusercontent.com/38081451/47631317-ff4be800-db88-11e8-83b7-5db2f77e2409.jpg)
@@ -39,5 +39,5 @@
 8. 회원탈퇴
 ![13](https://user-images.githubusercontent.com/38081451/47631316-ff4be800-db88-11e8-90bb-a73c5558fbcb.jpg)
 
-9. 자유게시판 글쓰기, 로그아웃, 회원정보수정등 
+9. Passenger로 글쓰기, 자유게시판 글쓰기, 로그아웃, 회원정보수정 등 
 
