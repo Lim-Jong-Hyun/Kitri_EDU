@@ -31,9 +31,13 @@
 6. Passenger로 로그인후 연결신청
 ![10](https://user-images.githubusercontent.com/38081451/47631319-ffe47e80-db88-11e8-8a98-dbd647468da3.PNG)
 
-7.
+7. 연결된 파트너와 정보보기
 ![11](https://user-images.githubusercontent.com/38081451/47631313-feb35180-db88-11e8-85f0-6bab5eb201b7.jpg)
 ![12](https://user-images.githubusercontent.com/38081451/47631314-feb35180-db88-11e8-9e9b-b7c6fdea7e7f.PNG)
 ![12](https://user-images.githubusercontent.com/38081451/47631315-ff4be800-db88-11e8-9ede-3712b2a6b664.jpg)
+
+8. 회원탈퇴
 ![13](https://user-images.githubusercontent.com/38081451/47631316-ff4be800-db88-11e8-90bb-a73c5558fbcb.jpg)
+
+9. 자유게시판 글쓰기, 로그아웃, 회원정보수정등 
 
