@@ -25,9 +25,13 @@
 ![7](https://user-images.githubusercontent.com/38081451/47631300-f824da00-db88-11e8-8808-8ed843e3fd46.jpg)
 ![8](https://user-images.githubusercontent.com/38081451/47631317-ff4be800-db88-11e8-83b7-5db2f77e2409.jpg)
 
-5. 
+5. 출발/도착지역 검색
 ![9](https://user-images.githubusercontent.com/38081451/47631318-ff4be800-db88-11e8-85f5-a8dba4c8283f.jpg)
+
+6. Passenger로 로그인후 연결신청
 ![10](https://user-images.githubusercontent.com/38081451/47631319-ffe47e80-db88-11e8-8a98-dbd647468da3.PNG)
+
+7.
 ![11](https://user-images.githubusercontent.com/38081451/47631313-feb35180-db88-11e8-85f0-6bab5eb201b7.jpg)
 ![12](https://user-images.githubusercontent.com/38081451/47631314-feb35180-db88-11e8-9e9b-b7c6fdea7e7f.PNG)
 ![12](https://user-images.githubusercontent.com/38081451/47631315-ff4be800-db88-11e8-9ede-3712b2a6b664.jpg)
