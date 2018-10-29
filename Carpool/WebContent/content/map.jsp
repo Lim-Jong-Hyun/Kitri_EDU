@@ -6,14 +6,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
-<title>°£´ÜÇÑ Áöµµ Ç¥½ÃÇÏ±â</title>
+<title>ê°„ë‹¨í•œ ì§€ë„ í‘œì‹œí•˜ê¸°</title>
 <!-- <script type="text/javascript" src="../../docs/js/examples-base.js"></script> -->
 <!-- <script type="text/javascript" src="../../docs/js/highlight.min.js"></script> -->
 <script type="text/javascript"
-	src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=ri4vEtl3RpdjfQ36bd_C&submodules=geocoder"></script>
+	src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=í´ë¼ì´ì–¸íŠ¸ ID&submodules=geocoder"></script>
 <!-- <script src='http://dev.openapi.map.naver.com/openapi/maps3.max.js?submodules=drawing'></script> -->
 <script type="text/javascript"
-	src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=ri4vEtl3RpdjfQ36bd_C&amp;submodules=drawing"></script>
+	src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=í´ë¼ì´ì–¸íŠ¸ ID&amp;submodules=drawing"></script>
 <script type="text/javascript"
 	src="//code.jquery.com/jquery-3.3.1.min.js"></script>
 <link rel="stylesheet"
@@ -23,11 +23,11 @@
 	<div id="wrap" class="section">
 		<div id="map" style="width: 100%; height: 500px;">
 			<div class="search" style="">
-				<input id="address1" type="text" placeholder="Ãâ¹ßÇÒ ÁÖ¼Ò" value="" /> <input
-					id="submit1" type="button" value="ÁÖ¼Ò °Ë»ö" /><br> <input
-					id="address2" type="text" placeholder="µµÂøÇÒ ÁÖ¼Ò" value="" /> <input
-					id="submit2" type="button" value="ÁÖ¼Ò °Ë»ö" /><br> <input
-					id="submit3" type="submit" value="ÁÖ¼Ò»ç¿ëÇÏ±â"> <input
+				<input id="address1" type="text" placeholder="ì¶œë°œí•  ì£¼ì†Œ" value="" /> <input
+					id="submit1" type="button" value="ì£¼ì†Œ ê²€ìƒ‰" /><br> <input
+					id="address2" type="text" placeholder="ë„ì°©í•  ì£¼ì†Œ" value="" /> <input
+					id="submit2" type="button" value="ì£¼ì†Œ ê²€ìƒ‰" /><br> <input
+					id="submit3" type="submit" value="ì£¼ì†Œì‚¬ìš©í•˜ê¸°"> <input
 					type="hidden" id="s_x"> <input type="hidden" id="s_y">
 				<input type="hidden" id="e_x"> <input type="hidden" id="e_y">
 			</div>
@@ -51,14 +51,14 @@
         address : address
       }, function(status, response) {
         if (status === naver.maps.Service.Status.ERROR) {
-          return alert('°Ë»ö°á°ú°¡ ¾ø½À´Ï´Ù');
+          return alert('ê²€ìƒ‰ê²°ê³¼ê°€ ì—†ìŠµë‹ˆë‹¤');
         }
 
         var item = response.result.items[0];
-        var addrType = item.isRoadAddress ? '[µµ·Î¸í ÁÖ¼Ò]' : '[Áö¹ø ÁÖ¼Ò]';
+        var addrType = item.isRoadAddress ? '[ë„ë¡œëª… ì£¼ì†Œ]' : '[ì§€ë²ˆ ì£¼ì†Œ]';
         var point = new naver.maps.Point(item.point.x, item.point.y);
 
-        infoWindow.setContent([ '<div style="padding:10px;min-width:200px;line-height:150%;">', '<h4 style="margin-top:5px;">°Ë»ö ÁÖ¼Ò : ' + response.result.userquery + '</h4><br />', addrType + ' ' + item.address + '<br />', '</div>' ].join('\n'));
+        infoWindow.setContent([ '<div style="padding:10px;min-width:200px;line-height:150%;">', '<h4 style="margin-top:5px;">ê²€ìƒ‰ ì£¼ì†Œ : ' + response.result.userquery + '</h4><br />', addrType + ' ' + item.address + '<br />', '</div>' ].join('\n'));
         map.setCenter(point);
         infoWindow.open(map, point);
 
@@ -104,7 +104,7 @@
         }
 
         if ($('#src2').val() == "" || $('#des2').val() == "") {
-          alert("°æ·Î¼³Á¤ ¿À·ù");
+          alert("ê²½ë¡œì„¤ì • ì˜¤ë¥˜");
           return;
 
         } else {
@@ -168,7 +168,7 @@
         $(top.document).find("#epx").attr("value", $('#e_x').val());
         $(top.document).find("#epy").attr("value", $('#e_y').val());
 
-        //alert("°Å¸®´Â"+distance);
+        //alert("ê±°ë¦¬ëŠ”"+distance);
       });
     }
 
