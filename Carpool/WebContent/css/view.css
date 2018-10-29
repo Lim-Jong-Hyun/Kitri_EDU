@@ -1,0 +1,292 @@
+/* 디자인 필독하세요. */
+/* 연한 바탕색 색상코드 : #e0e9f3 */
+/* 진한 바탕색 색상코드 : #333f50 */
+@charset "EUC-KR";
+
+a:link {
+	color: WindowText;
+	text-decoration: none;
+}
+
+a:visited {
+	color: WindowText;
+	text-decoration: none;
+}
+
+a:hover {
+	color: WindowText;
+	text-decoration: underline;
+}
+
+iframe {
+	width:500px;
+	height:500px;
+	border-style:none;
+	display:block;
+}
+
+textarea {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	border-width: 0;
+	background-color: #e0e9f3;
+}
+
+#foot {
+	text-align: center;
+	color: white;
+	margin: 0px auto;
+	vertical-align: middle;
+	border-spacing: 0px;
+	background-color: #767171;
+	height: 60px;
+	margin: 0px auto;
+}
+
+html {
+	font-size:14px;
+	overflow-y: scroll;
+}
+
+table {
+	width: 100%;
+	margin: 0px;
+	padding: 0px;
+}
+
+table#recruit {
+	margin: 0px auto;
+	width: 80%;
+	border: 3px solid;
+	border-color: #333f50;
+	padding: 0px;
+}
+
+table#menu {
+	margin: 0px auto;
+	padding: 0px;
+	text-align: center;
+	width: 100%;
+	color: #ffffff;
+	background-color: #333f50;
+}
+
+table#loginBar {
+	background-color: #ffffff;
+}
+
+table#joinTable {
+	background-color: #ffffff;
+	margin: 0px auto;
+	padding: 0px;
+	width: 40%;
+}
+
+table#editInfoTable {
+	background-color: #ffffff;
+	margin: 0px auto;
+	padding: 0px;
+	width: 40%;
+}
+
+table#outTable {
+	background-color: #ffffff;
+	margin: 0px auto;
+	padding: 0px;
+	width: 40%;
+}
+
+table#recruit td {
+	padding-left: 50px;
+}
+
+#navibar form {
+	margin-bottom: 10px;
+	margin-right: 10px;
+}
+
+div#top {
+	margin-top: 185px;
+	background-image: url(../img/title.png);
+	width: 100%;
+	height: 486px;
+}
+
+p#title {
+	display: inline-block;
+	padding-left: 20px;
+	padding-right: 20px;
+	color: #ffffff;
+	font-size: 18pt;
+	text-align: left;
+	text-shadow: 2px 2px 2px gray;
+}
+
+input[type="text"] {
+	width: 200px;
+	border: 0px;
+	background-color: #e0e9f3;
+}
+
+input[type="password"] {
+	width: 200px;
+	border: 0px;
+	background-color: #e0e9f3;
+}
+
+input[type="email"] {
+	width: 200px;
+	border: 0px;
+	background-color: #e0e9f3;
+}
+
+input[type="tel"] {
+	width: 200px;
+	border: 0px;
+	background-color: #e0e9f3;
+}
+
+input[type="submit"] {
+	width: 60px;
+	border: 0px;
+	background-color: #5e9bff;
+}
+
+input[type="button"] {
+	width: 60px;
+	border: 0px;
+	background-color: #5e9bff;
+}
+
+body {
+	margin: 0px;
+	padding: 0px;
+	margin-top: 189px;
+	background-color: #ffffff;
+	scrollbar: yes;
+}
+
+#viewProfile {
+	height: 100px;
+	width: auto;
+}
+
+#mainPage {
+	width: 100%;
+	text-align: center;
+	color: #000000;
+	font-size: 16pt;
+	text-shadow: 2px 2px 2px gray;
+}
+
+#introTable {
+	width: 80%;
+	margin: 0px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 0px;
+	background-color: #ffffff;
+	text-align: center;
+}
+
+#boardTable {
+	width: 95%;
+	margin: 0px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 0px;
+	background-color: #ffffff;
+	text-align: center;
+}
+
+#memberTable {
+	width:60%;
+	height:400px;
+	margin: 0px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 0px;
+	background-color: #ffffff;
+	text-align: center;
+}
+
+#joinPage {
+	margin: 0px;
+	padding: 0px;
+	background-color: #333f50;
+}
+
+div#navibar {
+	width: 100%;
+	position: fixed;
+	margin: 0px auto;
+	top: 0px;
+	left: 0px;
+	top: 0px;
+}
+
+div#navibar ul {
+	text-align: right;
+}
+
+div#navibar li {
+	display: inline-block;
+	margin-right: 30px;
+}
+
+img {
+	max-width: 100%;
+}
+
+#listSubject {
+	text-align: center;
+	background-color: #d9d9d9;
+}
+
+/* 승훈씨 */
+table#list {
+	width: 100%;
+	text-align: center;
+	margin: auto;
+}
+
+#board1 {
+	border:1px solid;
+	width: 80%;
+	text-align: center;
+	margin: 0px;
+	padding: 0px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#board2 {
+	border:1px solid;
+	width: 80%;
+	text-align: center;
+	margin: 0px;
+	padding: 0px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#board1 input[type=text]{
+	width:100%;
+}
+
+#board2 input[type=text]{
+	width:100%;
+}
+
+#editList {
+	width: 800px;
+	text-align: center;
+	margin: auto;
+}
+
+#editbutton {
+	width: 50px;
+	text-align: center;
+	margin: auto;
+}
